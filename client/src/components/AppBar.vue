@@ -22,11 +22,12 @@ nav {
   display: flex;
   color: #fff;
   padding: 0 1rem;
-  position: fixed;
+  position: absolute;
   align-items: center;
 
   & > span {
     font-size: 3rem;
+    cursor: pointer;
   }
 }
 </style>

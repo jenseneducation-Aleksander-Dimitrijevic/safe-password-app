@@ -28,23 +28,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-form {
-  width: 100%;
-  text-align: left;
-  margin-top: 2rem;
-  .form-control {
-    margin: 1rem 0;
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    input {
-      width: 100%;
-      border: none;
-      padding: 12px 8px;
-      border-radius: 3px;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

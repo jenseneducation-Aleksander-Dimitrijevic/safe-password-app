@@ -35,13 +35,19 @@ input {
   outline: none;
 }
 
+#app {
+  width: 100%;
+  margin: auto;
+  max-width: 460px;
+  position: relative;
+}
+
 .container {
   width: 100%;
   margin: auto;
-  height: 100vh;
   color: #fff;
   display: flex;
-  max-width: 460px;
+  height: 100vh;
   background: #160a66;
 
   .content {
@@ -77,6 +83,7 @@ form {
   margin: 1rem 0;
   font-size: 1rem;
   padding: 1rem 0;
+  cursor: pointer;
   color: #160a66;
   background: #fff;
   border-radius: 5px;

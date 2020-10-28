@@ -14,23 +14,26 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.content {
-  letter-spacing: 2px;
-  img {
-    width: 60px;
-    margin: auto;
-    display: block;
-  }
+<style lang="scss" scoped>
+.container {
+  cursor: pointer;
+  .content {
+    letter-spacing: 2px;
+    img {
+      width: 60px;
+      margin: auto;
+      display: block;
+    }
 
-  h1 {
-    margin: 1rem 0;
-  }
+    h1 {
+      margin: 1rem 0;
+    }
 
-  h2 {
-    font-size: 1.3rem;
-    color: #ffc107;
-    text-transform: uppercase;
+    h2 {
+      font-size: 1.3rem;
+      color: #ffc107;
+      text-transform: uppercase;
+    }
   }
 }
 </style>
