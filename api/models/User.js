@@ -26,4 +26,22 @@ module.exports = {
       token,
     };
   },
+  async login({ username, password }) {
+    if (username == "" || password == "") return;
+    const user = await users.findOne({ username });
+    if (!user) return;
+    const passwordMatch = await bcryptjs.compare(password, user.password);
+    if (!passwordMatch) return;
+    const token = jwt.sign(
+      {
+        userID: user._id,
+        username,
+      },
+      process.env.SECRET
+    );
+    return {
+      username: user.username,
+      token,
+    };
+  },
 };

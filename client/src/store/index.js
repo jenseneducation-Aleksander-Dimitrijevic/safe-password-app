@@ -11,13 +11,21 @@ export default new Vuex.Store({
   mutations: {
     SET_USER_DATA(state, userData) {
       state.user = userData;
-      console.log(state.user);
+      sessionStorage.setItem("user", JSON.stringify(userData));
+      axios.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${userData.token}`;
     },
   },
   actions: {
     registerUser({ commit }, credentials) {
       return axios
-        .post("/api/users", credentials)
+        .post("/api/register", credentials)
+        .then(({ data }) => commit("SET_USER_DATA", data));
+    },
+    loginUser({ commit }, credentials) {
+      return axios
+        .post("/api/login", credentials)
         .then(({ data }) => commit("SET_USER_DATA", data));
     },
   },
