@@ -9,7 +9,9 @@
       <img :src="require('@/assets/icon-transparent.png')" alt="lckd-icon" />
       <h1>LCKD</h1>
     </section>
-    <button v-show="user" class="btn-primary" @click="logout">Logga ut</button>
+    <button v-show="user" class="btn-primary" @click="logout">
+      Logga ut
+    </button>
   </nav>
 </template>
 
@@ -56,6 +58,17 @@ nav {
       font-size: 2rem;
       letter-spacing: 4px;
     }
+  }
+
+  .btn-primary {
+    width: auto;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: auto;
+    letter-spacing: 0;
+    background: transparent;
+    border: 2px solid #fff;
   }
 }
 </style>
