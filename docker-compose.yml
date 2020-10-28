@@ -1,0 +1,22 @@
+version: "3"
+services:
+  web-api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    container_name: nodejs-container
+    volumes:
+      - ./api:/usr/src/app/api
+      - /usr/src/app/api/node_modules
+  web-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: vuejs-container
+    volumes:
+      - ./client:/usr/src/app/client
+      - /usr/src/app/client/node_modules
