@@ -1,15 +1,19 @@
 <template>
   <nav>
     <span
-      v-show="!user"
+      v-show="$route.name != 'dashboard'"
       class="lnr lnr-arrow-left"
       @click="$router.push({ name: 'Home' })"
     ></span>
-    <section v-show="user">
+    <section v-show="$route.name == 'dashboard'">
       <img :src="require('@/assets/icon-transparent.png')" alt="lckd-icon" />
       <h1>LCKD</h1>
     </section>
-    <button v-show="user" class="btn-primary" @click="logout">
+    <button
+      v-show="$route.name == 'dashboard'"
+      class="btn-primary"
+      @click="logout"
+    >
       Logga ut
     </button>
   </nav>

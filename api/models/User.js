@@ -10,21 +10,11 @@ module.exports = {
     if (password !== repeatPassword) return;
     const user = await users.findOne({ username });
     if (user) return;
-    const newUser = await users.insert({
+    await users.insert({
       username,
       password: await bcryptjs.hash(password, 10),
     });
-    const token = jwt.sign(
-      {
-        userID: newUser._id,
-        username,
-      },
-      process.env.SECRET
-    );
-    return {
-      username: newUser.username,
-      token,
-    };
+    return true;
   },
   async login({ username, password }) {
     if (username == "" || password == "") return;

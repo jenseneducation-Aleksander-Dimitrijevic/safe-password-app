@@ -10,7 +10,10 @@ new Vue({
   store,
   created() {
     const storedSession = sessionStorage.getItem("user");
-    if (storedSession) store.commit("SET_USER_DATA", JSON.parse(storedSession));
+    if (storedSession) {
+      store.commit("SET_USER_DATA", JSON.parse(storedSession));
+      router.push({ name: "dashboard" });
+    }
   },
   render: (h) => h(App),
 }).$mount("#app");

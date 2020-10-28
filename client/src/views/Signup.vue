@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Login",
   methods: {
@@ -39,10 +40,13 @@ export default {
         alert("Fyll i fälten");
         return;
       }
-      this.$store
-        .dispatch("registerUser", this.input)
+      return axios
+        .post("/api/register", this.input)
         .then(() => this.$router.push({ name: "login" }))
-        .catch((err) => alert(err.response.data.error));
+        .catch((err) => {
+          alert(err.response.data.error);
+          this.input.password = this.input.repeatPassword = null;
+        });
     },
   },
   data() {

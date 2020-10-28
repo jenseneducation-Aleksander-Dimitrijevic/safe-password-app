@@ -18,11 +18,6 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    registerUser({ commit }, credentials) {
-      return axios
-        .post("/api/register", credentials)
-        .then(({ data }) => commit("SET_USER_DATA", data));
-    },
     loginUser({ commit }, credentials) {
       return axios
         .post("/api/login", credentials)
